@@ -1,0 +1,10 @@
+﻿@model Lab18ConsumeApi.Models.ListsViewModel
+
+<h2>Are you sure you want to delete this list?</h2>
+<p>All tasks with this list will be deleted!</p>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="List.ID" />
+    <input type="submit" value="Delete" />
+    <a asp-controller="Home" asp-action="Index">return to lists</a>
+</form>

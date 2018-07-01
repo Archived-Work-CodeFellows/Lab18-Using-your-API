@@ -1,0 +1,23 @@
+﻿@model Lab18ConsumeApi.Models.ListsViewModel
+
+<form asp-action="Update" asp-route-id="@Model.List.ID">
+
+    <label asp-for="List.Name">Name</label>
+    <input asp-for="List.Name" />
+    <br />
+
+    <label asp-for="List.IsDone">Is it done?</label>
+    <input type="checkbox" asp-for="List.IsDone" />
+    <br />
+
+    <button type="submit">Update task</button>
+    <button asp-action="Delete" formmethod="get" asp-route-id="@Model.List.ID">Delete list</button>
+    <a asp-controller="Home" asp-action="Index">return to lists</a>
+</form>
+
+@foreach (var item in Model.List.ToDoItems)
+{
+    <p>@item.Name</p>
+    <p>@item.IsDone</p>
+
+}

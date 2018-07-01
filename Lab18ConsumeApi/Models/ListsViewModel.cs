@@ -12,6 +12,8 @@ namespace Lab18ConsumeApi.Models
     {
         public IEnumerable<SelectListItem> ToDoListNames { get; set; }
         public IEnumerable<ToDoList> ToDoLists { get; set; }
+        public IEnumerable<ToDoItem> ToDoItems { get; set; }
+        public ToDoList List { get; set; }
         public ToDoItem ToDo { get; set; }
 
         public static ListsViewModel GetLists(long id, string value)
@@ -24,6 +26,15 @@ namespace Lab18ConsumeApi.Models
                 toDos.Select(n => n.Name)
                 );
             lvm.ToDoLists = toDos;
+            return lvm;
+        }
+
+        public static ListsViewModel GetAList(long id, string value)
+        {
+            ListsViewModel lvm = new ListsViewModel();
+            string jToken = JToken.Parse(value).ToString();
+            lvm.List = JsonConvert.DeserializeObject<ToDoList>(jToken);
+           
             return lvm;
         }
     }
