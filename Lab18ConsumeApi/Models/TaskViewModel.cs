@@ -28,7 +28,6 @@ namespace Lab18ConsumeApi.Models
                 lists.Select(n => n.Name)
                 );
             tvm.ToDoLists = lists;
-            //tvm.ToDo = item.Where(i => i.ID == id).Single();
             return tvm;
         }
     }

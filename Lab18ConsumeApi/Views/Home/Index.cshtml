@@ -2,7 +2,7 @@
 
 @foreach (var list in Model)
 {
-    <p>@list.Name</p>
+    <a asp-controller="ToDoList" asp-action="Details" asp-route-id="@list.ID"><p>@list.Name</p></a>
 
 }
 <form method="get" asp-controller="ToDoList" asp-action="Create">

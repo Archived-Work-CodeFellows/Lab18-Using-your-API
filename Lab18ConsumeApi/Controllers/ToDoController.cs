@@ -41,7 +41,7 @@ namespace Lab18ConsumeApi.Controllers
             {
 
                 await APITaskPost(toDo);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index");
             }
             return View(lvm);
         }
