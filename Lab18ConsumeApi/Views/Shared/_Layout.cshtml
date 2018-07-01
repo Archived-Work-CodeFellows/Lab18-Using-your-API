@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <environment include="Development">        
+        <link href="~/styles/style.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/styles/style.css" rel="stylesheet" />
+    </environment>
+</head>
+
+<body>
+    <div class="container" style="margin-top:4%">
+        @RenderBody()
+        <hr class="clear" />
+        <footer class="clear"><p>&copy; @DateTime.Now.Year - Eric Singleton</p></footer>
+    </div>
+</body>
+</html>

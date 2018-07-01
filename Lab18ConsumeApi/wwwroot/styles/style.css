@@ -1,0 +1,31 @@
+﻿body {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+}
+
+.home {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.home:last-child {
+    margin-left: 10px;
+}
+
+h2,h3{
+    display: inline;
+}
+
+.clear{
+    clear: both;
+}

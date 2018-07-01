@@ -1,23 +1,22 @@
 ﻿@model Lab18ConsumeApi.Models.ListsViewModel
+<div class="wrapper">
+    <form asp-action="Update" asp-route-id="@Model.List.ID">
 
-<form asp-action="Update" asp-route-id="@Model.List.ID">
+        <label asp-for="List.Name">Name</label>
+        <input asp-for="List.Name" />
+        <br />
 
-    <label asp-for="List.Name">Name</label>
-    <input asp-for="List.Name" />
-    <br />
+        <label asp-for="List.IsDone">Is it done?</label>
+        <input type="checkbox" asp-for="List.IsDone" />
+        <br />
 
-    <label asp-for="List.IsDone">Is it done?</label>
-    <input type="checkbox" asp-for="List.IsDone" />
-    <br />
-
-    <button type="submit">Update task</button>
-    <button asp-action="Delete" formmethod="get" asp-route-id="@Model.List.ID">Delete list</button>
-    <a asp-controller="Home" asp-action="Index">return to lists</a>
-</form>
-
-@foreach (var item in Model.List.ToDoItems)
-{
-    <p>@item.Name</p>
-    <p>@item.IsDone</p>
-
-}
+        <button type="submit">Update list</button>
+        <button asp-action="Delete" formmethod="get" asp-route-id="@Model.List.ID">Delete list</button>
+        <a asp-controller="Home" asp-action="Index">return to lists</a>
+    </form>
+    <h2 style="display:block">Current Tasks</h2>
+    @foreach (var item in Model.List.ToDoItems)
+    {
+        <p><h3>Task:</h3> @item.Name <h3>Done:</h3> @item.IsDone</p>
+    }
+</div>

@@ -1,18 +1,21 @@
 ﻿@model Lab18ConsumeApi.Models.TaskViewModel
 
-<form asp-action="Update" asp-route-id="@Model.ToDo.ID">
+    <div class="wrapper">
+        <form asp-action="Update" asp-route-id="@Model.ToDo.ID">
 
-    <label asp-for="ToDo.Name">Name</label>
-    <input asp-for="ToDo.Name" />
-    <br />
+            <label asp-for="ToDo.Name">Name</label>
+            <input asp-for="ToDo.Name" />
+            <br />
 
-    <label asp-for="ToDo.IsDone">Is it done?</label>
-    <input type="checkbox" asp-for="ToDo.IsDone" />
-    <br />
+            <label asp-for="ToDo.IsDone">Is it done?</label>
+            <input type="checkbox" asp-for="ToDo.IsDone" />
+            <br />
 
-    <select asp-for="ToDo.ToDoList" asp-items="Model.ToDoListNames"></select>
+            <select asp-for="ToDo.ToDoList" asp-items="Model.ToDoListNames" style="margin-bottom:5px;"></select>
+            <br />
 
-    <button type="submit">Update task</button>
-    <button type="submit" asp-action="Delete" asp-route-id="@Model.ToDo.ID">Delete Task</button>
-    <a asp-controller="ToDo" asp-action="Index">return to Tasks</a>
-</form>
+            <button class="home" type="submit">Update task</button>
+            <button class="home" type="submit" asp-action="Delete" asp-route-id="@Model.ToDo.ID">Delete Task</button>
+            <a class="home" asp-controller="ToDo" asp-action="Index">return to Tasks</a>
+        </form>
+    </div>
