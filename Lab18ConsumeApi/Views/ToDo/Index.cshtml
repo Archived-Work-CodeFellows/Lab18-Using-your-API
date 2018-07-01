@@ -1,0 +1,13 @@
+﻿@model List<Lab18ConsumeApi.Models.ToDoItem>
+
+@foreach (var task in Model)
+{
+    <a asp-controller="ToDo" asp-action="Details" asp-route-id="@task.ID"><p>Task Name: @task.Name</p></a>
+    <p>In List: @task.ToDoList</p>
+}
+<form method="get" asp-controller="ToDo" asp-action="Create">
+    <button type="submit">Add a new task</button>
+</form>
+<form method="get" asp-controller="Home" asp-action="Index">
+    <button type="submit">Go back to lists</button>
+</form>
