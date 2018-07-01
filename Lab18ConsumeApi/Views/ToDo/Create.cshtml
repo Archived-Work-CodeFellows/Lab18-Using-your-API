@@ -1,0 +1,16 @@
+﻿@model Lab18ConsumeApi.Models.ListsViewModel
+
+<form method="post" asp-controller="ToDo" form-action="Create">
+
+    <label asp-for="ToDo.Name">Name</label>
+    <input asp-for="ToDo.Name" />
+    <br />
+
+    <label asp-for="ToDo.IsDone">Is it done?</label>
+    <input type="checkbox" asp-for="ToDo.IsDone" />
+    <br />
+    
+    <select asp-for="ToDo.ToDoList" asp-items="Model.ToDoListNames"></select>
+
+    <button type="submit">Make task</button>
+</form>
