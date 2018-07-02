@@ -1,16 +1,34 @@
 ﻿@model Lab18ConsumeApi.Models.ListsViewModel
-
-<form method="post" asp-controller="ToDo" form-action="Create">
-
-    <label asp-for="ToDo.Name">Name</label>
-    <input asp-for="ToDo.Name" />
-    <br />
-
-    <label asp-for="ToDo.IsDone">Is it done?</label>
-    <input type="checkbox" asp-for="ToDo.IsDone" />
-    <br />
-    
-    <select asp-for="ToDo.ToDoList" asp-items="Model.ToDoListNames"></select>
-
-    <button type="submit">Make task</button>
-</form>
+<div class="wrapper">
+    <form method="post" asp-controller="ToDo" form-action="Create">
+        <h1>Make a new task</h1>
+        <table>
+            <tr>
+                <td>
+                    <label asp-for="ToDo.Name">Name</label>
+                </td>
+                <td>
+                    <input asp-for="ToDo.Name" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="ToDo.IsDone">Is it done?</label>
+                </td>
+                <td>
+                    <input type="checkbox" asp-for="ToDo.IsDone" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Add to a list</label>
+                </td>
+                <td>
+                    <select asp-for="ToDo.ToDoList" asp-items="Model.ToDoListNames"></select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Make task</button>
+        <a class="home" asp-controller="ToDo" asp-action="Index">return to tasks</a>
+    </form>
+</div>

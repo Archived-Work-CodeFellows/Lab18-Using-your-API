@@ -1,0 +1,58 @@
+﻿@import "normalize.css";
+
+body {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    align-content: center;
+}
+
+form {
+    margin: 0 auto;
+}
+
+.home {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.home:last-child {
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2,h3{
+    display: inline;
+}
+
+.clear{
+    clear: both;
+}
+
+a{
+    color: gray;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: lightgray;
+}
+a:active {
+    color: lightblue;
+}
+table{
+    margin: 0px auto 15px auto;
+}
+table, tr, td{
+    border: 1px solid black;
+    padding: 5px;
+}
