@@ -1,14 +1,28 @@
 ﻿@model Lab18ConsumeApi.Models.ToDoList
 
-<form method="post" asp-controller="ToDoList" form-action="Create">
+<div class="wrapper">
+    <h1>Make a new List</h1>
+    <form method="post" asp-controller="ToDoList" form-action="Create">
+        <table>
+            <tr>
+                <td>
+                    <label asp-for="Name">Name</label>
+                </td>
+                <td>
+                    <input asp-for="Name" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="IsDone">Is it done?</label>
+                </td>
+                <td>
+                    <input type="checkbox" asp-for="IsDone" />
+                </td>
+            </tr>
+        </table>
 
-    <label asp-for="Name">Name</label>
-    <input asp-for="Name" />
-    <br />
-
-    <label asp-for="IsDone">Is it done?</label>
-    <input type="checkbox" asp-for="IsDone" />
-    <br />
-
-    <button type="submit">Make List</button>
-</form>
+        <button type="submit">Make List</button>
+        <a class="home" asp-controller="Home" asp-action="Index">return to Lists</a>
+    </form>
+</div>
