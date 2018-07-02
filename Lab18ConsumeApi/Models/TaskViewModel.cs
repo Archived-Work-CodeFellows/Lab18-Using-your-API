@@ -13,7 +13,14 @@ namespace Lab18ConsumeApi.Models
         public IEnumerable<SelectListItem> ToDoListNames { get; set; }
         public IEnumerable<ToDoList> ToDoLists { get; set; }
         public ToDoItem ToDo { get; set; }
-
+        /// <summary>
+        /// Method used to take in JSON strings to deserialize into useable
+        /// objects
+        /// </summary>
+        /// <param name="id">ID to target specific toDos</param>
+        /// <param name="list">JSON string</param>
+        /// <param name="task">JSON string</param>
+        /// <returns>A TaskViewModel object to be used on Views</returns>
         public static TaskViewModel GetDetails(long id, string list, string task)
         {
             TaskViewModel tvm = new TaskViewModel();

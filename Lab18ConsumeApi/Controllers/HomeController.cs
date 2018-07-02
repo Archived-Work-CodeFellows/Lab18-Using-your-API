@@ -16,6 +16,10 @@ namespace Lab18ConsumeApi.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Action that retrieves the lists from the ToDoAPI
+        /// </summary>
+        /// <returns>A View with a converted lists object</returns>
         public async Task<IActionResult> Index()
         {
             string value = await APIListGet();
@@ -24,7 +28,11 @@ namespace Lab18ConsumeApi.Controllers
             
             return View(lists);
         }
-
+        /// <summary>
+        /// Action that makes a GET: API call to request all
+        /// lists from the API
+        /// </summary>
+        /// <returns>String of json</returns>
         public async Task<string> APIListGet()
         {
             using (var client = new HttpClient())
